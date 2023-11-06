@@ -23,8 +23,12 @@ function calculatesFarePrice(start, destination) {
             return(0)
         }
     } if(start <= destination) {
-        const travel = (destination - start)*264
-        if(travel >= 400 && travel <= 2000) {
+        const travel = (start - destination)*264
+        if(travel >= 400) {
+        } return(25)
+    } else if(start <= destination){
+        const total = (destination - start)*264
+        if(total <= 2000) {
             return(2.56)
         }
     } else if (start < 2500) {
