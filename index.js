@@ -17,22 +17,39 @@ function distanceTravelledInFeet(start, destination) {
     }
 }
 function calculatesFarePrice(start, destination) {
-    if(destination >= start) {
-        const distance = (destination - start)*264
-        if(distance <= 400) {
-            return(0)
-        }
-    } if(start <= destination) {
-        const travel = (start - destination)*264
-        if(travel >= 400) {
-        } return(25)
-    } else if(start <= destination){
-        const total = (destination - start)*264
-        if(total <= 2000) {
-            return(2.56)
-        }
-    } else if (start < 2500) {
-        return('cannot travel that far')
+    const distance =  distanceTravelledInFeet(start, destination);
+
+    if (distance <= 400) {
+        return(0)
+    } else if (distance > 400 && distance <= 2000) {
+        return((distance - 400) * .02)
+    } else if (distance > 2000 && distance <2500) {
+        return(25)
+    } else{
+        return 'cannot travel that far'
     }
 }
+    
+
+    
+
+
+
+
+
+    // if(destination >= start) {
+    //     if(distance <= 400) {
+    //         return(0)
+    //     }
+    // } if(start <= destination) {
+    //     if(travel >= 400 && travel <= 2000) {
+    //     } return(25)
+    // // } else if(start <= destination){
+    // //     const total = (destination - start)*264
+    // //     if(total <= 2000) {
+    // //         return(2.56)
+    // //     }
+    // } else if (start < 2500) {
+    //     return('cannot travel that far')
+    // }
 
